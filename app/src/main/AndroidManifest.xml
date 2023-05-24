@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher2"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Team2"
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".toolbar"
+            android:exported="false" />
+        <activity
+            android:name=".Team2E_Fragment_top"
+            android:exported="false" />
+        <activity
+            android:name=".Team2D_Fragment_pop"
+            android:exported="false" />
+        <activity
+            android:name=".Team2C_FragmentChat"
+            android:exported="false" />
+        <activity
+            android:name=".Team2B_Item"
+            android:exported="false" />
+        <activity
+            android:name=".Team2B_ItemAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".Team2B_FragmentMain"
+            android:exported="false" />
+        <activity
+            android:name=".DetailActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:parentActivityName=".View.Team2A_FragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Search"
+            android:exported="false" />
+        <activity
+            android:name=".View.Team2A_FragmentActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

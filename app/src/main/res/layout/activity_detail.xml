@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".DetailActivity">
+
+    <!--    메인에서 영화 포스터 누르면 나오는 영화정보창-->
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/movie_toolbar"
+        android:minHeight="?attr/actionBarSize"
+
+        android:theme="?attr/actionBarTheme" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_poster"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:textSize="20dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="8"
+                    android:layout_height="wrap_content" />
+
+                <!--layout_gravity 센터로 하면 위쪽으로 보여서 일단 bottom으로 설정함-->
+                <ImageView
+                    android:id="@+id/iv_star"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:layout_gravity="bottom"
+                    app:srcCompat="@drawable/baseline_star_24" />
+
+                <TextView
+                    android:id="@+id/tv_vote_average"
+                    android:textSize="20dp"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <!--                android:textColor="@color/colorAccent"-->
+
+            <TextView
+                android:id="@+id/tv_original_title"
+                android:paddingLeft="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_release_date"
+                android:paddingLeft="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_overview"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_ott"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardBackgroundColor="@color/clear_70"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="3dp">
+
+        <Button
+            android:id="@+id/btnFavoriteN"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/baseline_favorite_n"/>
+
+        <Button
+            android:id="@+id/btnFavoriteY"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/baseline_favorite_y"
+            android:visibility="invisible" />
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
